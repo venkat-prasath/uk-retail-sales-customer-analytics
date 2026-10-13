@@ -98,6 +98,10 @@ The United Kingdom generated approximately **£9.00 million** in revenue, making
 
 **Business implication:** The UK is the core market in this dataset. International markets may offer opportunities for targeted marketing and further growth analysis.
 
+### Country Revenue Visualisation
+
+![Top 10 countries by revenue](images/top_countries.png)
+
 ## SQL Analysis
 
 The SQL file contains queries to analyse:
