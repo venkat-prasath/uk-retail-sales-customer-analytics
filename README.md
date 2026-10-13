@@ -58,3 +58,30 @@ The analysis will document data quality issues, assumptions, and limitations bef
 ## Author
 
 MSc Data Science Graduate | Python | SQL | Machine Learning
+
+
+## Analysis and Findings
+
+### Data Quality
+- Original dataset: 541,909 transaction records.
+- Duplicate records identified: 5,268.
+- Missing customer IDs: 135,080.
+- Cleaned dataset: 524,878 records after the initial filtering process.
+
+### Exploratory Analysis
+- Analysed monthly sales revenue.
+- Identified the top 10 products by recorded revenue.
+- Compared sales across countries.
+- Summarised customer purchasing behaviour for transactions with known customer IDs.
+
+### Visualisations
+Charts are generated in the exploratory analysis notebook.
+
+### Data Cleaning Notes
+The initial analysis removes duplicate records, invalid quantities and prices, and cancelled invoices. These choices affect the results. Returns, cancellations and transactions with missing customer IDs should be examined separately before drawing conclusions about net revenue or total customer activity.
+
+### Next Steps
+- Add SQL queries for business questions.
+- Investigate returns and cancellations.
+- Build customer RFM segments.
+- Develop a dashboard for business stakeholders.
