@@ -53,7 +53,7 @@ Customer IDs were retained when missing values were present, allowing sales anal
 | Metric | Result |
 |---|---:|
 | Total revenue | £10,642,110.80 |
-| Cleaned transaction rows | 524,878 |
+| Cleaned line-item rows | 524,878 |
 | Unique invoices | 19,960 |
 | Unique identified customers | 4,338 |
 
