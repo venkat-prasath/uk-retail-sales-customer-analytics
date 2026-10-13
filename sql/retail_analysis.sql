@@ -1,0 +1,2 @@
+-- UK Retail Sales & Customer Analytics
+-- SQL analysis queries will be added here.
