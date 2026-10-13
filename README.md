@@ -70,6 +70,10 @@ Customer IDs were retained when missing values were present, allowing sales anal
 
 *December 2011 is incomplete because the dataset ends on 9 December, so its revenue should not be compared directly with full-month totals.*
 
+### Monthly Revenue Visualisation
+
+![Monthly retail revenue chart](images/monthly_revenue.png)
+
 ### Top Products by Revenue
 
 The leading revenue-generating entries included:
