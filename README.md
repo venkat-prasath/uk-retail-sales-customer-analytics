@@ -88,6 +88,10 @@ The leading revenue-generating entries included:
 
 **Business implication:** Product-level performance can help guide stock planning and merchandising. Postage and other non-standard entries should be separated from physical products before making inventory decisions.
 
+### Top Products Visualisation
+
+![Top 10 products by revenue](images/top_products.png)
+
 ### Country Performance
 
 The United Kingdom generated approximately **£9.00 million** in revenue, making it the largest market in the dataset. The next highest-revenue countries included the Netherlands, Ireland (listed as EIRE in the dataset), Germany, and France.
