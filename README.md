@@ -2,107 +2,133 @@
 
 ## Project Overview
 
-This project explores retail transaction data to understand sales performance, customer purchasing behaviour, and product trends.
+This project analyses the UCI Online Retail dataset to identify sales trends, top-performing products, important markets, and customer purchasing patterns. The goal is to turn raw retail transaction data into actionable business insights using Python, SQL, and data visualisation.
 
-The objective is to demonstrate how Python and SQL can be used to transform raw transaction data into useful business insights.
+## Business Objectives
 
-**Project status:** In progress
-
-## Objectives
-
-- Analyse sales and revenue trends over time.
-- Identify top-performing products and markets.
-- Explore customer purchasing behaviour.
-- Segment customers using Recency, Frequency and Monetary (RFM) analysis.
-- Communicate findings through clear visualisations and business recommendations.
-
-## Tools & Technologies
-
-- Python
-- pandas and NumPy
-- SQL
-- Matplotlib and Seaborn
-- Jupyter Notebook
-- Power BI (planned)
+- Measure overall sales performance.
+- Identify monthly revenue trends and seasonal patterns.
+- Find the products generating the most revenue.
+- Compare sales performance across countries.
+- Identify high-value customers.
+- Demonstrate data cleaning, SQL analysis, and visualisation skills.
 
 ## Dataset
 
-The project will use the UCI Online Retail dataset.
+**Source:** [UCI Machine Learning Repository — Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail)
 
-Source: https://archive.ics.uci.edu/dataset/352/online+retail
+The dataset contains transactions from a UK-based online retailer between 1 December 2010 and 9 December 2011.
 
-The dataset contains transaction records from a UK-based online retailer.
+The original dataset contains **541,909 rows** and eight columns, including invoice number, product description, quantity, invoice date, unit price, customer ID, and country.
 
-## Project Workflow
+## Tools & Technologies
 
-1. Data collection and understanding
-2. Data cleaning and validation
-3. Exploratory data analysis
-4. SQL-based business analysis
-5. Customer segmentation
-6. Visualisation and reporting
-7. Business recommendations
+- **Python:** data cleaning and analysis
+- **Pandas:** data manipulation
+- **Matplotlib:** data visualisation
+- **SQL:** sales analysis and aggregation
+- **SQLite:** querying the cleaned dataset
+- **Google Colab:** browser-based development environment
+- **GitHub:** version control and project documentation
+
+## Data Cleaning
+
+The following steps were applied before analysis:
+
+1. Converted invoice dates into datetime format.
+2. Removed duplicate rows.
+3. Removed records missing essential transaction fields.
+4. Excluded records with non-positive quantities or unit prices.
+5. Excluded cancelled invoices identified by invoice numbers beginning with `C`.
+6. Created a `Revenue` column by multiplying quantity by unit price.
+
+After cleaning, the dataset contained **524,878 rows**, with 17,031 rows removed.
+
+Customer IDs were retained when missing values were present, allowing sales analysis to include transactions that could not be attributed to a specific customer.
 
 ## Key Findings
 
-To be added after completing the analysis.
+### Overall Performance
 
-## How to Run
+| Metric | Result |
+|---|---:|
+| Total revenue | £10,642,110.80 |
+| Cleaned transaction rows | 524,878 |
+| Unique invoices | 19,960 |
+| Unique identified customers | 4,338 |
 
-Instructions and dependencies will be added as the project develops.
+*Revenue represents the sum of quantity multiplied by unit price after the cleaning steps above. It is not an audited accounting or profit figure.*
+
+### Monthly Sales Trends
+
+- **November 2011** recorded the highest revenue among the reported months, at approximately **£1.50 million**.
+- October 2011 generated approximately **£1.15 million**.
+- September 2011 generated approximately **£1.06 million**.
+- February 2011 had the lowest revenue among the complete months, at approximately **£522,546**.
+
+**Business implication:** The increase in sales towards the final quarter suggests that the retailer should investigate seasonal demand and prepare inventory and fulfilment capacity for busier periods.
+
+*December 2011 is incomplete because the dataset ends on 9 December, so its revenue should not be compared directly with full-month totals.*
+
+### Top Products by Revenue
+
+The leading revenue-generating entries included:
+
+| Product | Revenue |
+|---|---:|
+| DOTCOM POSTAGE | £206,248.77 |
+| REGENCY CAKESTAND 3 TIER | £174,156.54 |
+| PAPER CRAFT, LITTLE BIRDIE | £168,469.60 |
+| WHITE HANGING HEART T-LIGHT HOLDER | £106,236.72 |
+| PARTY BUNTING | £99,445.23 |
+
+**Business implication:** Product-level performance can help guide stock planning and merchandising. Postage and other non-standard entries should be separated from physical products before making inventory decisions.
+
+### Country Performance
+
+The United Kingdom generated approximately **£9.00 million** in revenue, making it the largest market in the dataset. The next highest-revenue countries included the Netherlands, Ireland (listed as EIRE in the dataset), Germany, and France.
+
+**Business implication:** The UK is the core market in this dataset. International markets may offer opportunities for targeted marketing and further growth analysis.
+
+## SQL Analysis
+
+The SQL file contains queries to analyse:
+
+- Overall sales metrics
+- Top products by revenue
+- Monthly revenue trends
+- Top countries by revenue
+- Top customers by revenue
+
+The queries use SQLite syntax and expect a cleaned table named `retail_sales`.
+
+## Repository Structure
+
+```text
+uk-retail-sales-customer-analytics/
+├── README.md
+├── sql/
+│   └── retail_analysis.sql
+└── reports/
+    └── README.md
+```
 
 ## Limitations
 
-The analysis will document data quality issues, assumptions, and limitations before any business conclusions are drawn.
+- The dataset covers a historical period from 2010 to 2011 and does not represent current retail behaviour.
+- Missing customer IDs mean that some transactions cannot be linked to individual customers.
+- Revenue does not account for operating costs, product costs, or profit.
+- Postage and other non-standard product entries may affect product rankings.
+- December 2011 covers only part of the month.
+
+## Future Improvements
+
+- Develop customer segmentation using RFM (Recency, Frequency, Monetary) analysis.
+- Build an interactive sales dashboard.
+- Investigate seasonal patterns and customer retention.
+- Separate physical products from postage and other service entries.
+- Explore customer purchasing behaviour and repeat-purchase rates.
 
 ## Author
 
-MSc Data Science Graduate | Python | SQL | Machine Learning
-
-
-## Analysis and Findings
-
-### Data Quality
-- Original dataset: 541,909 transaction records.
-- Duplicate records identified: 5,268.
-- Missing customer IDs: 135,080.
-- Cleaned dataset: 524,878 records after the initial filtering process.
-
-### Exploratory Analysis
-- Analysed monthly sales revenue.
-- Identified the top 10 products by recorded revenue.
-- Compared sales across countries.
-- Summarised customer purchasing behaviour for transactions with known customer IDs.
-
-### Visualisations
-Charts are generated in the exploratory analysis notebook.
-
-### Data Cleaning Notes
-The initial analysis removes duplicate records, invalid quantities and prices, and cancelled invoices. These choices affect the results. Returns, cancellations and transactions with missing customer IDs should be examined separately before drawing conclusions about net revenue or total customer activity.
-
-### Next Steps
-- Add SQL queries for business questions.
-- Investigate returns and cancellations.
-- Build customer RFM segments.
-- Develop a dashboard for business stakeholders.
-
-
-## Key Findings
-
-### Monthly Revenue
-- November 2011 recorded the highest monthly revenue in the cleaned dataset: 1,503,866.78.
-- October 2011 recorded revenue of 1,151,263.73.
-- February 2011 recorded the lowest revenue among the full calendar months shown: 522,545.56.
-- December 2011 is incomplete because the dataset ends on 9 December 2011.
-
-### Geographic Performance
-- The United Kingdom generated the highest recorded revenue, followed by the Netherlands and EIRE.
-- International markets can be explored separately to identify differences in sales volume and revenue.
-
-### Product Performance
-- DOTCOM POSTAGE ranked first by recorded revenue in the initial product ranking.
-- PAPER CRAFT, LITTLE BIRDIE ranked highly by both revenue and units sold.
-- Product and service entries should be reviewed separately before drawing conclusions about physical product performance.
-
-### Methodology and Limitations
-The analysis uses a cleaned version of the UCI Online Retail dataset. Duplicate rows, non-positive quantities and prices, and cancelled invoices were filtered according to the documented cleaning process. These choices affect the reported results. The figures should therefore be interpreted as recorded revenue under these rules, not audited net revenue.
+MSc Data Science graduate | Interested in Data Analytics, Business Intelligence, and Data Science.
