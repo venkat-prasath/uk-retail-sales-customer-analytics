@@ -85,3 +85,24 @@ The initial analysis removes duplicate records, invalid quantities and prices, a
 - Investigate returns and cancellations.
 - Build customer RFM segments.
 - Develop a dashboard for business stakeholders.
+
+
+## Key Findings
+
+### Monthly Revenue
+- November 2011 recorded the highest monthly revenue in the cleaned dataset: 1,503,866.78.
+- October 2011 recorded revenue of 1,151,263.73.
+- February 2011 recorded the lowest revenue among the full calendar months shown: 522,545.56.
+- December 2011 is incomplete because the dataset ends on 9 December 2011.
+
+### Geographic Performance
+- The United Kingdom generated the highest recorded revenue, followed by the Netherlands and EIRE.
+- International markets can be explored separately to identify differences in sales volume and revenue.
+
+### Product Performance
+- DOTCOM POSTAGE ranked first by recorded revenue in the initial product ranking.
+- PAPER CRAFT, LITTLE BIRDIE ranked highly by both revenue and units sold.
+- Product and service entries should be reviewed separately before drawing conclusions about physical product performance.
+
+### Methodology and Limitations
+The analysis uses a cleaned version of the UCI Online Retail dataset. Duplicate rows, non-positive quantities and prices, and cancelled invoices were filtered according to the documented cleaning process. These choices affect the reported results. The figures should therefore be interpreted as recorded revenue under these rules, not audited net revenue.
