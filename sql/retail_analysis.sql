@@ -7,7 +7,7 @@
 -- 1. Overall sales metrics
 SELECT
     ROUND(SUM(Revenue), 2) AS total_revenue,
-    COUNT(*) AS total_transactions,
+    COUNT(*) AS cleaned_line_items,
     COUNT(DISTINCT InvoiceNo) AS total_invoices,
     COUNT(DISTINCT CustomerID) AS unique_customers
 FROM retail_sales;
